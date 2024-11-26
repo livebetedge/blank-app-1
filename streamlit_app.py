@@ -10,4 +10,5 @@ st.selectbox (label = 'Player Name', options = ['Rasmus Dahlin', 'Tage Thompson'
 #function to load Shot data
 @st.cache_data
 def load_2024 data ():
-base_url = http://raw.githubusercontent.com/livebetedge/public
+base_url = "http://raw.githubusercontent.com/livebetedge/blank-app-1/main"
+combined_data = pd.DataFrame
