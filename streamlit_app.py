@@ -41,6 +41,6 @@ if not data.empty:
     )
 
     if player_name and player_name != "Type a name or select...":
-        player_data = data[data["player_name"] == pitcher_name]
+        player_data = data[data["player_name"] == player_name]
 
     
