@@ -26,3 +26,21 @@ def load_2024_data():
             st.warning(f"HTTP Error for file: {file_name} - {http_err}")
         except Exception as e:
             st.error(f"Error loading file {file_name}: {e}")
+# Load the data
+data = load_2024_data()
+
+# Ensure data is loaded before continuing
+if not data.empty:
+    st.title("Buffalo Sabres Shot by Period Data")
+
+    # Combine search bar and dropdown for player selection
+    all_players = sorted(data["player_name"].dropna().unique())
+    player_name = st.selectbox(
+        "Search or select a player:",
+        options=["Type a name or select..."] + all_players
+    )
+
+    if player_name and player_name != "Type a name or select...":
+        player_data = data[data["player_name"] == pitcher_name]
+
+    
