@@ -9,7 +9,7 @@ from io import BytesIO
 # Function to load 2024 shot data from GitHub 
 @st.cache_data
 def load_2024_data():
-    base_url = "https://raw.githubusercontent.com/livebetedge/blank-app-1/main/"
+    base_url = "https://github.com/livebetedge/blank-app-1/blob/main/Shot%20Data%20By%20Period.xlsx%20-%20Sabres%20Shots.csv"
     combined_data = pd.DataFrame()
     columns_to_keep = ['Date', 'Player Name', 'Postion', 'Team', 'Opponent', 'Period 1 - SOG','Period 2 - SOG', 'Period 3 - SOG', 'Total SOG']
 
