@@ -14,13 +14,13 @@ def load_2024_data():
     columns_to_keep = ['Date', 'Player Name', 'Postion', 'Team', 'Opponent', 'Period 1 - SOG','Period 2 - SOG', 'Period 3 - SOG', 'Total SOG']
 
     for month in range(10, 12):  
-        file_name = f'Shot Data by Period.xlsx - Sabres Shots.csv.gz'
+        file_name = f'Shot Data by Period.xlsx - Sabres Shots.csv'
         file_url = f"{base_url}{file_name}"
         try:
             response = requests.get(file_url)
             response.raise_for_status()
             file_content = BytesIO(response.content)
-            data = pd.read_csv(file_content, compression='gzip', usecols=columns_to_keep)
+            data = pd.read_csv(file_content, usecols=columns_to_keep)
             combined_data = pd.concat([combined_data, data], ignore_index=True)
         except requests.exceptions.HTTPError as http_err:
             st.warning(f"HTTP Error for file: {file_name} - {http_err}")
