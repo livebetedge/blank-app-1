@@ -8,3 +8,25 @@ st.title ("Buffalo Sabres Shot by Period Data")
 st.write ("Please use the dropdown to filter players and see recent shot data")
 st.selectbox (label = 'Player Name', options = ['Rasmus Dahlin', 'Tage Thompson', 'Jason Zucker','Alex Tuch','Dylan Cozens'])
 #function to load Shot data
+# Mapping pitch type abbreviations to full text
+
+# Function to load 2024 shot data from GitHub 
+@st.cache_data
+def load_2024_data():
+    base_url = "https://raw.githubusercontent.com/livebetedge/blank-app-1/main/"
+    combined_data = pd.DataFrame()
+    columns_to_keep = ['Date', 'Player Name', 'Postion', 'Team', 'Opponent', 'Period 1 - SOG','Period 2 - SOG', 'Period 3 - SOG', 'Total SOG']
+
+    for month in range(10, 12):  
+        file_name = f'Shot Data by Period.xlsx - Sabres Shots.csv.gz'
+        file_url = f"{base_url}{file_name}"
+        try:
+            response = requests.get(file_url)
+            response.raise_for_status()
+            file_content = BytesIO(response.content)
+            data = pd.read_csv(file_content, compression='gzip', usecols=columns_to_keep)
+            combined_data = pd.concat([combined_data, data], ignore_index=True)
+        except requests.exceptions.HTTPError as http_err:
+            st.warning(f"HTTP Error for file: {file_name} - {http_err}")
+        except Exception as e:
+            st.error(f"Error loading file {file_name}: {e}")
