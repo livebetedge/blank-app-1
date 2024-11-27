@@ -4,10 +4,8 @@ import streamlit as st
 import altair as alt
 import requests
 from io import BytesIO
-df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
-# df = pd.read_excel(...)  # will work for Excel files
-
-st.title("Hello world!")  # add a title
+df = pd.read_csv("https://github.com/livebetedge/blank-app-1/blob/main/Sabres%20Shot%20Data%20-%2011.20.csv")  
+st.title("Buffalo Sabres Shot Data")  # add a title
 st.write(df) 
 
 
