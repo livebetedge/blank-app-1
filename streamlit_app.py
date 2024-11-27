@@ -4,7 +4,7 @@ import streamlit as st
 import altair as alt
 import requests
 from io import BytesIO
-url = 'https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv'
+url = 'https://github.com/livebetedge/blank-app-1/blob/main/Shot%20Data%20By%20Period.xlsx%20-%20Sabres%20Shots.csv'
 df = pd.read_csv(url,index_col=0)
 #df = pd.read_csv(url)
 
