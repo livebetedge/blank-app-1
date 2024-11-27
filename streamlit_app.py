@@ -11,6 +11,6 @@ option = st.multiselect(
     ['Rasumus Dahlin', 'Dylan Cozens', 'JJ Peterka'])
 
 if 'Rasmus Dahlin' in option:
-    Rasmus_Dahlin_id = st.text_input('Rasmus Dahlin is a 1st period shot leader')
+    Rasmus_Dahlin_id = st.write('Rasmus Dahlin is a 1st period shot leader for the Buffalo Sabres')
    
 
