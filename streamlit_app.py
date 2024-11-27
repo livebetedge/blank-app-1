@@ -8,7 +8,7 @@ st.title ('Buffalo Sabres Shot by Period Data')
 st.write ('Please use the drop down menu below to select a player and see his recent shot data')
 option = st.multiselect(
     'Player Name',
-    ['Rasumus Dahlin', 'Dylan Cozens', 'JJ Peterka'])
+    ['Rasmus Dahlin', 'Dylan Cozens', 'JJ Peterka'])
 
 if 'Rasmus Dahlin' in option:
     Rasmus_Dahlin_id = st.write('Rasmus Dahlin is a 1st period shot leader for the Buffalo Sabres')
