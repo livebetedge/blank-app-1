@@ -9,8 +9,7 @@ st.write ('Please use the drop down menu below to select a player and see his re
 option = st.multiselect(
     'Player Name',
     ['Rasmus Dahlin', 'Dylan Cozens', 'JJ Peterka'])
+df = pd.read_csv(
 
-if 'Rasmus Dahlin' in option:
-    Rasmus_Dahlin_id = st.write('Rasmus Dahlin is a 1st period shot leader for the Buffalo Sabres')
    
 
