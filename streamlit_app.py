@@ -9,7 +9,8 @@ st.write ('Please use the drop down menu below to select a player and see his re
 option = st.multiselect(
     'Player Name',
     ['Rasmus Dahlin', 'Dylan Cozens', 'JJ Peterka'])
-df = pd.read_csv(
+df = pd.read_csv('Sabres Shot Data -11.20')
+print (df)
 
    
 
