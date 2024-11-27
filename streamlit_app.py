@@ -4,10 +4,12 @@ import streamlit as st
 import altair as alt
 import requests
 from io import BytesIO
-# Updated URL to the raw CSV content
-raw_url = 'https://raw.githubusercontent.com/livebetedge/blank-app-1/main/Sabres%20Shot%20Data%20-%2011.20.csv'  
-df = pd.read_csv(raw_url)
-print(df)
+df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
+# df = pd.read_excel(...)  # will work for Excel files
+
+st.title("Hello world!")  # add a title
+st.write(df) 
+
 
    
 
